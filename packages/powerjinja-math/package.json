@@ -10,7 +10,9 @@
     "library"
   ],
   "author": "Juro Oravec <juraj.oravec.josefson@gmail.com>",
-  "homepage": "",
+  "homepage": "https://github.com/JuroOravec/powerjinja",
+  "repository": "https://github.com/JuroOravec/powerjinja.git",
+  "bugs": "https://github.com/JuroOravec/powerjinja/issues",
   "license": "MIT",
   "directories": {
     "lib": "lib"
