@@ -1,0 +1,70 @@
+# TODO
+
+- String.fromCharCode()
+- String.fromCodePoint()
+- String.prototype.charAt()
+- String.prototype.charCodeAt()
+- String.prototype.codePointAt()
+- graphemeAt // see [VocaJS graphemeAt](https://vocajs.com/#graphemeAt)
+- String.prototype.concat()
+- String.prototype.endsWith()
+- String.prototype.includes()
+- String.prototype.indexOf()
+- String.prototype.lastIndexOf()
+- String.prototype.compare()
+- String.prototype.match/search
+- String.prototype.normalize()
+- String.prototype.pad()/center
+- String.prototype.padEnd()
+- String.prototype.padStart()
+- String.prototype.quote()
+- String.prototype.repeat()
+- String.prototype.replace()
+- String.prototype.slice()
+- String.prototype.split()
+- String.prototype.startsWith()
+- String.prototype.substring()
+- String.prototype.toLowerCase()
+- String.prototype.toUpperCase()
+- capitalize/upperFirst/title
+- decapitalize/lowerFirst/untitle // see [Lodash lowerFirst](https://lodash.com/docs/4.17.10#lowerFirst)
+- invert capitalization/str.swapcase()
+- String.prototype.trim()/strip
+- String.prototype.trimEnd()
+- String.prototype.trimStart()
+- truncate / prune see [VocaJS prune](https://vocajs.com/#prune)
+- format/sprintf // according to python formatting / see [VocaJS sprintf](https://vocajs.com/#sprintf) and [VocaJS vprintf](https://vocajs.com/#vprintf)
+- count/length
+- count graphemes
+- count words // also could CamelCased
+- encode // use python encoding available
+- expandTabs
+- str.partition()
+- str.rpartition()
+- str.splitlines()
+- first
+- last
+- shuffle
+- str.zfill()
+- occurences / count substring
+- wrap in quotes
+- wrap in a
+- wrap in span
+- wrap in p
+- wrap in h1...h6
+- wrap in ....
+- camelCase
+- kebab-case // see [Lodash kebabCase](https://lodash.com/docs/4.17.10#kebabCase)
+- snake_case
+- Start Case/Title Case
+- deburr/latinise // see [Lodash deburr](https://lodash.com/docs/4.17.10#deburr) or [VocaJS latinise](https://vocajs.com/#latinise)
+- escape // see [Lodash escape](https://lodash.com/docs/4.17.10#escape)
+- parseInt
+- unescape // see [Lodash unescape](https://lodash.com/docs/4.17.10#unescape)
+- words // see [Lodash words](https://lodash.com/docs/4.17.10#words)
+
+## Sources
+
+- [Lodash](https://lodash.com/docs/4.17.10)
+- [JS Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
+- [VocaJS](https://vocajs.com/)
