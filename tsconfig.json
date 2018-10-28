@@ -1,0 +1,43 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "noFallthroughCasesInSwitch": true,
+    // "noImplicitAny": true,
+    "noImplicitThis": true,
+    // "noImplicitReturns": true,
+    "noUnusedParameters": false, // The linter is used for these.
+    "noUnusedLocals": false, // The linter is used for these.
+    "baseUrl": ".",
+    // "paths": {
+    //   "app*": ["src/app*"]
+    // },
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "inlineSourceMap": true,
+    "sourceRoot": "./src",
+    "inlineSources": true,
+    // "strictNullChecks": true,
+    "target": "esnext",
+    "alwaysStrict": true,
+    "forceConsistentCasingInFileNames": true,
+    "removeComments": true
+  },
+  "lib": ["es2015.promise"],
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "lib/**/*",
+    "test/**/*",
+    "node_modules/**/*",
+    "package-template"
+  ]
+
+}
