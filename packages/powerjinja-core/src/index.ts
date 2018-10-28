@@ -2,6 +2,6 @@ import { createInstance } from "./create-instance";
 
 import { handleQueue } from "./definitions/handle-queue";
 
-export const coreDefinitions = createInstance();
+export const powerjinjaCore = createInstance();
 
-coreDefinitions.define("powerjinja.core.handle_queue", handleQueue);
+powerjinjaCore.define("powerjinja.core.handle_queue", handleQueue);

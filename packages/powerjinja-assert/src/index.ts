@@ -1,4 +1,4 @@
-import { coreDefinitions } from "powerjinja-core";
+import { powerjinjaCore } from "powerjinja-core";
 
 import { isFalse as isFalseBoolean } from "./definitions/boolean/is-false";
 import { isTrue as isTrueBoolean } from "./definitions/boolean/is-true";
@@ -125,402 +125,390 @@ import { isTypeOneOf as isTypeOneOfValue } from "./definitions/value/is-type-one
 import { isType as isTypeValue } from "./definitions/value/is-type";
 import { isUndefined as isUndefinedValue } from "./definitions/value/is-undefined";
 
-export const assertDefinitions = coreDefinitions;
+export const powerjinjaAssert = powerjinjaCore;
 
-assertDefinitions.define("powerjinja.assert.boolean.is_false", isFalseBoolean);
-assertDefinitions.define("powerjinja.assert.boolean.is_true", isTrueBoolean);
-assertDefinitions.define(
+powerjinjaAssert.define("powerjinja.assert.boolean.is_false", isFalseBoolean);
+powerjinjaAssert.define("powerjinja.assert.boolean.is_true", isTrueBoolean);
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_any_items_less_than_or_equal_times",
   containsAnyItemsLessThanOrEqualTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_any_items_less_than_times",
   containsAnyItemsLessThanTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_any_items_more_than_or_equal_times",
   containsAnyItemsMoreThanOrEqualTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_any_items_more_than_times",
   containsAnyItemsMoreThanTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_any_items_times",
   containsAnyItemsTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_any_items",
   containsAnyItemsList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_item_less_than_or_equal_times",
   containsItemLessThanOrEqualTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_item_less_than_times",
   containsItemLessThanTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_item_more_than_or_equal_times",
   containsItemMoreThanOrEqualTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_item_more_than_times",
   containsItemMoreThanTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_item_times",
   containsItemTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_item",
   containsItemList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_items_less_than_or_equal_times",
   containsItemsLessThanOrEqualTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_items_less_than_times",
   containsItemsLessThanTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_items_more_than_or_equal_times",
   containsItemsMoreThanOrEqualTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_items_more_than_times",
   containsItemsMoreThanTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_items_times",
   containsItemsTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_items",
   containsItemsList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_only_item_less_than_or_equal_times",
   containsOnlyItemLessThanOrEqualTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_only_item_less_than_times",
   containsOnlyItemLessThanTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_only_item_more_than_or_equal_times",
   containsOnlyItemMoreThanOrEqualTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_only_item_more_than_times",
   containsOnlyItemMoreThanTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_only_item_times",
   containsOnlyItemTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_only_item",
   containsOnlyItemList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_only_items_less_than_or_equal_times",
   containsOnlyItemsLessThanOrEqualTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_only_items_less_than_times",
   containsOnlyItemsLessThanTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_only_items_more_than_or_equal_times",
   containsOnlyItemsMoreThanOrEqualTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_only_items_more_than_times",
   containsOnlyItemsMoreThanTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_only_items_times",
   containsOnlyItemsTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_only_items",
   containsOnlyItemsList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_only_ordered_items_less_than_or_equal_times",
   containsOnlyOrderedItemsLessThanOrEqualTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_only_ordered_items_less_than_times",
   containsOnlyOrderedItemsLessThanTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_only_ordered_items_more_than_or_equal_times",
   containsOnlyOrderedItemsMoreThanOrEqualTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_only_ordered_items_more_than_times",
   containsOnlyOrderedItemsMoreThanTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_only_ordered_items_times",
   containsOnlyOrderedItemsTimesList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.contains_only_ordered_items",
   containsOnlyOrderedItemsList
 );
-assertDefinitions.define("powerjinja.assert.list.is_empty", isEmptyList);
-assertDefinitions.define(
+powerjinjaAssert.define("powerjinja.assert.list.is_empty", isEmptyList);
+powerjinjaAssert.define(
   "powerjinja.assert.list.is_first_item_equal_one_of",
   isFirstItemEqualOneOfList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.is_first_item_equal",
   isFirstItemEqualList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.is_first_item_type_one_of",
   isFirstItemTypeOneOfList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.is_first_item_type",
   isFirstItemTypeList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.is_last_item_equal_one_of",
   isLastItemEqualOneOfList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.is_last_item_equal",
   isLastItemEqualList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.is_last_item_type_one_of",
   isLastItemTypeOneOfList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.is_last_item_type",
   isLastItemTypeList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.is_nth_item_equal_one_of",
   isNthItemEqualOneOfList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.is_nth_item_equal",
   isNthItemEqualList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.is_nth_item_type_one_of",
   isNthItemTypeOneOfList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.is_nth_item_type",
   isNthItemTypeList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.is_of_length_less_than_or_equal",
   isOfLengthLessThanOrEqualList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.is_of_length_less_than",
   isOfLengthLessThanList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.is_of_length_more_than_or_equal",
   isOfLengthMoreThanOrEqualList
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.list.is_of_length_more_than",
   isOfLengthMoreThanList
 );
-assertDefinitions.define("powerjinja.assert.list.is_of_length", isOfLengthList);
-assertDefinitions.define("powerjinja.assert.number.is_around", isAroundNumber);
-assertDefinitions.define(
+powerjinjaAssert.define("powerjinja.assert.list.is_of_length", isOfLengthList);
+powerjinjaAssert.define("powerjinja.assert.number.is_around", isAroundNumber);
+powerjinjaAssert.define(
   "powerjinja.assert.number.is_between_exclusive_inclusive",
   isBetweenExclusiveInclusiveNumber
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.number.is_between_inclusive_exclusive",
   isBetweenInclusiveExclusiveNumber
 );
-assertDefinitions.define(
-  "powerjinja.assert.number.is_between",
-  isBetweenNumber
-);
-assertDefinitions.define(
+powerjinjaAssert.define("powerjinja.assert.number.is_between", isBetweenNumber);
+powerjinjaAssert.define(
   "powerjinja.assert.number.is_divisible_by",
   isDivisibleByNumber
 );
-assertDefinitions.define("powerjinja.assert.number.is_equal", isEqualNumber);
-assertDefinitions.define("powerjinja.assert.number.is_even", isEvenNumber);
-assertDefinitions.define("powerjinja.assert.number.is_finite", isFiniteNumber);
-assertDefinitions.define("powerjinja.assert.number.is_float", isFloatNumber);
-assertDefinitions.define(
+powerjinjaAssert.define("powerjinja.assert.number.is_equal", isEqualNumber);
+powerjinjaAssert.define("powerjinja.assert.number.is_even", isEvenNumber);
+powerjinjaAssert.define("powerjinja.assert.number.is_finite", isFiniteNumber);
+powerjinjaAssert.define("powerjinja.assert.number.is_float", isFloatNumber);
+powerjinjaAssert.define(
   "powerjinja.assert.number.is_in_range",
   isInRangeNumber
 );
-assertDefinitions.define("powerjinja.assert.number.is_inf", isInfNumber);
-assertDefinitions.define("powerjinja.assert.number.is_int", isIntNumber);
-assertDefinitions.define(
+powerjinjaAssert.define("powerjinja.assert.number.is_inf", isInfNumber);
+powerjinjaAssert.define("powerjinja.assert.number.is_int", isIntNumber);
+powerjinjaAssert.define(
   "powerjinja.assert.number.is_less_than_or_equal",
   isLessThanOrEqualNumber
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.number.is_less_than",
   isLessThanNumber
 );
-assertDefinitions.define("powerjinja.assert.number.is_matrix", isMatrixNumber);
-assertDefinitions.define(
+powerjinjaAssert.define("powerjinja.assert.number.is_matrix", isMatrixNumber);
+powerjinjaAssert.define(
   "powerjinja.assert.number.is_more_than_or_equal",
   isMoreThanOrEqualNumber
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.number.is_more_than",
   isMoreThanNumber
 );
-assertDefinitions.define("powerjinja.assert.number.is_nan", isNanNumber);
-assertDefinitions.define(
+powerjinjaAssert.define("powerjinja.assert.number.is_nan", isNanNumber);
+powerjinjaAssert.define(
   "powerjinja.assert.number.is_negative_inf",
   isNegativeInfNumber
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.number.is_negative",
   isNegativeNumber
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.number.is_nonnegative",
   isNonnegativeNumber
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.number.is_nonpositive",
   isNonpositiveNumber
 );
-assertDefinitions.define("powerjinja.assert.number.is_odd", isOddNumber);
-assertDefinitions.define(
+powerjinjaAssert.define("powerjinja.assert.number.is_odd", isOddNumber);
+powerjinjaAssert.define(
   "powerjinja.assert.number.is_positive_inf",
   isPositiveInfNumber
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.number.is_positive",
   isPositiveNumber
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.number.is_square_matrix",
   isSquareMatrixNumber
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.string.contains_less_than_or_equal_times",
   containsLessThanOrEqualTimesString
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.string.contains_less_than_times",
   containsLessThanTimesString
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.string.contains_more_than_or_equal_times",
   containsMoreThanOrEqualTimesString
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.string.contains_more_than_times",
   containsMoreThanTimesString
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.string.contains_newline",
   containsNewlineString
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.string.contains_times",
   containsTimesString
 );
-assertDefinitions.define("powerjinja.assert.string.contains", containsString);
-assertDefinitions.define("powerjinja.assert.string.ends_with", endsWithString);
-assertDefinitions.define("powerjinja.assert.string.is_alpha", isAlphaString);
-assertDefinitions.define(
+powerjinjaAssert.define("powerjinja.assert.string.contains", containsString);
+powerjinjaAssert.define("powerjinja.assert.string.ends_with", endsWithString);
+powerjinjaAssert.define("powerjinja.assert.string.is_alpha", isAlphaString);
+powerjinjaAssert.define(
   "powerjinja.assert.string.is_alphanum",
   isAlphanumString
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.string.is_capitalized",
   isCapitalizedString
 );
-assertDefinitions.define("powerjinja.assert.string.is_empty", isEmptyString);
-assertDefinitions.define(
+powerjinjaAssert.define("powerjinja.assert.string.is_empty", isEmptyString);
+powerjinjaAssert.define(
   "powerjinja.assert.string.is_longer_than_or_equal",
   isLongerThanOrEqualString
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.string.is_longer_than",
   isLongerThanString
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.string.is_lowercase",
   isLowercaseString
 );
-assertDefinitions.define(
-  "powerjinja.assert.string.is_numeric",
-  isNumericString
-);
-assertDefinitions.define(
+powerjinjaAssert.define("powerjinja.assert.string.is_numeric", isNumericString);
+powerjinjaAssert.define(
   "powerjinja.assert.string.is_of_length",
   isOfLengthString
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.string.is_shorter_than_or_equal",
   isShorterThanOrEqualString
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.string.is_shorter_than",
   isShorterThanString
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.string.is_uppercase",
   isUppercaseString
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.string.is_whitespace",
   isWhitespaceString
 );
-assertDefinitions.define(
+powerjinjaAssert.define(
   "powerjinja.assert.string.starts_with",
   startsWithString
 );
-assertDefinitions.define("powerjinja.assert.value.is_boolean", isBooleanValue);
-assertDefinitions.define(
-  "powerjinja.assert.value.is_callable",
-  isCallableValue
-);
-assertDefinitions.define("powerjinja.assert.value.is_defined", isDefinedValue);
-assertDefinitions.define("powerjinja.assert.value.is_empty", isEmptyValue);
-assertDefinitions.define(
+powerjinjaAssert.define("powerjinja.assert.value.is_boolean", isBooleanValue);
+powerjinjaAssert.define("powerjinja.assert.value.is_callable", isCallableValue);
+powerjinjaAssert.define("powerjinja.assert.value.is_defined", isDefinedValue);
+powerjinjaAssert.define("powerjinja.assert.value.is_empty", isEmptyValue);
+powerjinjaAssert.define(
   "powerjinja.assert.value.is_equal_one_of",
   isEqualOneOfValue
 );
-assertDefinitions.define("powerjinja.assert.value.is_equal", isEqualValue);
-assertDefinitions.define("powerjinja.assert.value.is_falsy", isFalsyValue);
-assertDefinitions.define(
-  "powerjinja.assert.value.is_iterable",
-  isIterableValue
-);
-assertDefinitions.define("powerjinja.assert.value.is_list", isListValue);
-assertDefinitions.define("powerjinja.assert.value.is_macro", isMacroValue);
-assertDefinitions.define("powerjinja.assert.value.is_mapping", isMappingValue);
-assertDefinitions.define("powerjinja.assert.value.is_none", isNoneValue);
-assertDefinitions.define("powerjinja.assert.value.is_number", isNumberValue);
-assertDefinitions.define("powerjinja.assert.value.is_object", isObjectValue);
-assertDefinitions.define("powerjinja.assert.value.is_sameas", isSameasValue);
-assertDefinitions.define("powerjinja.assert.value.is_string", isStringValue);
-assertDefinitions.define("powerjinja.assert.value.is_truthy", isTruthyValue);
-assertDefinitions.define(
+powerjinjaAssert.define("powerjinja.assert.value.is_equal", isEqualValue);
+powerjinjaAssert.define("powerjinja.assert.value.is_falsy", isFalsyValue);
+powerjinjaAssert.define("powerjinja.assert.value.is_iterable", isIterableValue);
+powerjinjaAssert.define("powerjinja.assert.value.is_list", isListValue);
+powerjinjaAssert.define("powerjinja.assert.value.is_macro", isMacroValue);
+powerjinjaAssert.define("powerjinja.assert.value.is_mapping", isMappingValue);
+powerjinjaAssert.define("powerjinja.assert.value.is_none", isNoneValue);
+powerjinjaAssert.define("powerjinja.assert.value.is_number", isNumberValue);
+powerjinjaAssert.define("powerjinja.assert.value.is_object", isObjectValue);
+powerjinjaAssert.define("powerjinja.assert.value.is_sameas", isSameasValue);
+powerjinjaAssert.define("powerjinja.assert.value.is_string", isStringValue);
+powerjinjaAssert.define("powerjinja.assert.value.is_truthy", isTruthyValue);
+powerjinjaAssert.define(
   "powerjinja.assert.value.is_type_one_of",
   isTypeOneOfValue
 );
-assertDefinitions.define("powerjinja.assert.value.is_type", isTypeValue);
-assertDefinitions.define(
+powerjinjaAssert.define("powerjinja.assert.value.is_type", isTypeValue);
+powerjinjaAssert.define(
   "powerjinja.assert.value.is_undefined",
   isUndefinedValue
 );

@@ -1,9 +1,9 @@
-import { coreDefinitions } from "powerjinja-core";
+import { powerjinjaCore } from "powerjinja-core";
 
 import { all } from "./definitions/all";
 import { any } from "./definitions/any";
 
-export const arrayDefinitions = coreDefinitions;
+export const powerjinjaArray = powerjinjaCore;
 
-arrayDefinitions.define("powerjinja.array.all", all);
-arrayDefinitions.define("powerjinja.array.any", any);
+powerjinjaArray.define("powerjinja.array.all", all);
+powerjinjaArray.define("powerjinja.array.any", any);

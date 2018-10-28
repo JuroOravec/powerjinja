@@ -1,3 +1,3 @@
-import { coreDefinitions } from "powerjinja-core";
+import { powerjinjaCore } from "powerjinja-core";
 
-export const stringDefinitions = coreDefinitions;
+export const powerjinjaString = powerjinjaCore;

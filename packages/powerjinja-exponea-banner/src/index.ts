@@ -1,4 +1,4 @@
-import { coreDefinitions } from "powerjinja-core";
+import { powerjinjaCore } from "powerjinja-core";
 
 import { attributeWithCalc } from "./definitions/attribute-with-calc";
 import { backgroundValue } from "./definitions/background-value";
@@ -12,49 +12,49 @@ import { processVerticalPosition } from "./definitions/process-vertical-position
 import { sameUnitOperation } from "./definitions/same-unit-operation";
 import { shadowValue } from "./definitions/shadow-value";
 
-export const exponeaBannerDefinitions = coreDefinitions;
+export const powerjinjaExponeaBanner = powerjinjaCore;
 
-exponeaBannerDefinitions.define(
+powerjinjaExponeaBanner.define(
   "powerjinja.exponea_banner.attribute_with_calc",
   attributeWithCalc
 );
-exponeaBannerDefinitions.define(
+powerjinjaExponeaBanner.define(
   "powerjinja.exponea_banner.background_value",
   backgroundValue
 );
-exponeaBannerDefinitions.define(
+powerjinjaExponeaBanner.define(
   "powerjinja.exponea_banner.banner_height",
   bannerHeight
 );
-exponeaBannerDefinitions.define(
+powerjinjaExponeaBanner.define(
   "powerjinja.exponea_banner.banner_position",
   bannerPosition
 );
-exponeaBannerDefinitions.define(
+powerjinjaExponeaBanner.define(
   "powerjinja.exponea_banner.breakpoint_conditions",
   breakpointConditions
 );
-exponeaBannerDefinitions.define(
+powerjinjaExponeaBanner.define(
   "powerjinja.exponea_banner.close_button_position",
   closeButtonPosition
 );
-exponeaBannerDefinitions.define(
+powerjinjaExponeaBanner.define(
   "powerjinja.exponea_banner.process_banner_position",
   processBannerPosition
 );
-exponeaBannerDefinitions.define(
+powerjinjaExponeaBanner.define(
   "powerjinja.exponea_banner.process_horizontal_position",
   processHorizontalPosition
 );
-exponeaBannerDefinitions.define(
+powerjinjaExponeaBanner.define(
   "powerjinja.exponea_banner.process_vertical_position",
   processVerticalPosition
 );
-exponeaBannerDefinitions.define(
+powerjinjaExponeaBanner.define(
   "powerjinja.exponea_banner.same_unit_operation",
   sameUnitOperation
 );
-exponeaBannerDefinitions.define(
+powerjinjaExponeaBanner.define(
   "powerjinja.exponea_banner.shadow_value",
   shadowValue
 );
