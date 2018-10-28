@@ -1,2 +1,7 @@
-# powerjinja
-In-template data manipulation library with a functional twist for jinja2 templating language.
+# README
+
+## Create new packages
+
+To create new packages, run command
+
+`npm run create-package -- <your-package-name>`
