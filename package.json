@@ -10,6 +10,7 @@
   "scripts": {
     "create-package": "node util/create-package.js",
     "create-index": "node util/construct-package-index-file.js",
+    "create-index-all": "node util/construct-all-core-dependant-index-files.js",
     "fix-typos": "node util/fix-definition-typos.js",
     "update-main": "node util/update-main-package-dependencies.js"
   }
