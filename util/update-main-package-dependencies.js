@@ -6,7 +6,7 @@ fs.readdirSync(path.resolve('packages')).forEach((package, i, arr) => {
     if (package === 'powerjinja') {
         return;
     }
-    process.stdout.write(`(${i}/ ${arr.length-1}) Adding package: "${package}"...`);
+    process.stdout.write(`(${i+1}/ ${arr.length}) Adding package: "${package}"...`);
     const cmd = spawnSync('lerna', ['add', package, `--scope=powerjinja`]);
     if (cmd.error) {
         throw Error(cmd.error);

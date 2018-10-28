@@ -12,13 +12,13 @@ if (!fs.existsSync(path.resolve('packages/' + process.argv[2]))) {
 const imports = [];
 const definitions = [];
 
-const pkg = process.argv[2];
-const moduleNameWords = pkg.split('-');
+const packageName = generateNameVariantsFromKebabCase(process.argv[2]);
+const moduleNameWords = packageName.kebabCase.split('-');
 moduleNameWords.shift();
 const moduleName = generateNameVariantsFromKebabCase(moduleNameWords.join('-'));
+const coreModuleName = generateNameVariantsFromKebabCase('powerjinja-core');
 
-
-const rootPath = path.resolve('packages/' + pkg + '/src/definitions');
+const rootPath = path.resolve('packages/' + packageName.kebabCase + '/src/definitions');
 
 const dirsToCheck = [rootPath];
 const defs = [];
@@ -51,16 +51,16 @@ defs.forEach(def => {
     const asStatement = def.subpath.length > 0 ? ' as ' + def.camelCase + definitionSubpathSuffix : '';
 
 
-    imports.push(`import {${def.camelCase}${asStatement}} from './definitions/${importPathSubpath}${def.kebabCase}'`);
-    definitions.push(`${moduleName.camelCase}Definitions.define('powerjinja.${moduleName.snakeCase}.${definitionPathSubpath}${def.snakeCase}', ${def.camelCase}${definitionSubpathSuffix});`);
+    imports.push(`import { ${def.camelCase}${asStatement} } from './definitions/${importPathSubpath}${def.kebabCase}'`);
+    definitions.push(`${packageName.camelCase}.define('powerjinja.${moduleName.snakeCase}.${definitionPathSubpath}${def.snakeCase}', ${def.camelCase}${definitionSubpathSuffix});`);
 });
 
-let indexFile = `import {coreDefinitions} from 'powerjinja-core';\n\n`;
+let indexFile = `import { ${coreModuleName.camelCase} } from "${coreModuleName.kebabCase}";\n\n`;
 indexFile += imports.join('\n');
-indexFile += `\n\nexport const ${moduleName.camelCase}Definitions = coreDefinitions;\n\n`;
+indexFile += `\n\nexport const ${packageName.camelCase} = ${coreModuleName.camelCase};\n\n`;
 indexFile += definitions.join('\n');
 
-fs.writeFileSync(path.resolve('packages/' + pkg + '/src/index.ts'), indexFile);
+fs.writeFileSync(path.resolve('packages/' + packageName.kebabCase + '/src/index.ts'), indexFile);
 console.log('The file has been saved!');
 
 
