@@ -1,0 +1,31 @@
+{
+  "name": "powerjinja-core",
+  "version": "0.0.0",
+  "description": "Powerjinja module with core functionalities.",
+  "keywords": [
+    "powerjinja",
+    "jinja",
+    "core",
+    "library"
+  ],
+  "author": "Juro Oravec <juraj.oravec.josefson@gmail.com>",
+  "homepage": "",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "tsc": "tsc",
+    "build": "tsc",
+    "start": "npm run build && node lib",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "build": "tsc",
+  "dependencies": {
+    "inject-definition": "^2.0.2"
+  }
+}
