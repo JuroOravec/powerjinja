@@ -1,0 +1,93 @@
+# TODO
+
+- Map
+- toArray
+- wrap in arr
+- insert at
+- insertAll at
+- delete at
+- reverse
+- fill with
+- nth item
+- range
+- rangeRight
+- empty
+- batch/chunk/splitEvery
+- compact/removeFalsy
+- concat/joinArrays
+- difference
+- differenceBy
+- drop/removeFirstX
+- dropRight/slice(?)/removeLastX
+- drop if type/without
+- indexOf
+- lastIndex
+- flatten
+- first
+- last
+- occurences
+- ignoreLast
+- ignoreFirst
+- intersection // arg1: [1, 2]; arg2: [2, 3]; intersection = [2]
+- intersectionBy // arg1: [1, 2]; arg2: [2, 3]; intersection = [2]
+- join into string
+- last indexOf // same as reverse and indexOf
+- removeValues
+- removeValuesBy
+- splitAt
+- slice
+- sliceRight
+- take
+- takeRight
+- take if type
+- takeRight if type
+- sort
+- sortBy
+- unique
+- uniqueBy
+- union // same as concat + unique
+- unionBy // same as concat + unique
+- zip // [[1, 2], [a, b], [true, false]] => [[1, a, true], [2, b, false]]
+- unzip // [[1, a, true], [2, b, false]] => [[1, 2], [a, b], [true, false]]
+- change value at/update
+- change values at
+- append/push
+- chain (map and append mapped values)
+- filter
+- filterRight
+- find
+- findRight
+- foreach
+- foreachRight
+- groupBy // jinja should have this
+- intersperce // inserts new item inbetween each item
+- length
+- mapAccum // like reduce but returns all the intermediate steps
+- mapAccumRight
+- mapAccumBy
+- mapAccumRightBy
+- reduce
+- reduceRight
+- reduceBy
+- reduceRightBy
+- mergeAll // merge list of objects into an objects
+- prepend
+- reject // opposite of filter
+- repeat
+- xprod // all combinations
+- copywithin
+- keys // e.g. returns [0, 1, 2, ...]
+- pop
+- shiftLeft
+- shiftRight
+- splice
+- toString
+- shuffle
+- random // https://lodash.com/docs/4.17.10#sample
+- random of size n // https://lodash.com/docs/4.17.10#sampleSize
+
+## Sources
+
+https://ramdajs.com/docs/
+https://lodash.com/docs/4.17.10
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
