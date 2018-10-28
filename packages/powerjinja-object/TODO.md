@@ -1,0 +1,27 @@
+# TODO
+
+- fromPairs/Object.fromEntries() // [[a: 1], [b: 2]] => {a: 1, b: 2}
+- Object.assign()
+- defaults // like assign, but only the first presented value for a specific key is taken.
+- Object.create()
+- Object.entries()/toPairs
+- Object.keys()
+- Object.values()
+- has
+- get
+- set
+- setAll // sets all property values to a particular value
+- remove/unset
+- omit (omitBy?)
+- pick (pickBy?)/filter
+- mapValues? // would map values and directly create new object
+- mapKeys? // would map values and directly create new object
+- forEach? // shorthand for object.entries & array.foreach
+- findKey // [Lodash](https://lodash.com/docs/4.17.10#findKey)
+- findLastKey
+- invert
+- invertBy
+- trasform?
+- update?
+- flatten
+- wrap value in object // what would be the key then?
