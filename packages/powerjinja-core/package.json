@@ -28,6 +28,6 @@
   },
   "build": "tsc",
   "dependencies": {
-    "inject-definition": "^2.0.5"
+    "inject-definition": "^2.0.6"
   }
 }
