@@ -1,6 +1,19 @@
 // Declared dependencies for housekeeping
 import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 
+/**
+ * Returns true if first arguments is the type that is described by the second argument.
+ * @param {any} arg value that is being checked
+ * @param {string} type can be one of 'string' | 'number' | 'boolean' | 'undefined' | 'none' (or 'null') | 'macro' (or 'callable' or 'function') | 'list' (or 'array' or 'tuple') | 'object' (or 'dictionary' or 'mapping')
+ * @returns {boolean}
+ * @example
+ * {{- powerjinja.assert.value.is_type([], 'object', macros=[powerjinja.core.print]) -}}
+ * // prints False
+ *
+ * @example
+ * {{- powerjinja.assert.value.is_type([], 'array', macros=[powerjinja.core.print]) -}}
+ * // prints True
+ */
 export const isType = `
 {%- macro is_type(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{%- if arg2 == 'string' -%}
