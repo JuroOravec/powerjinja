@@ -17,6 +17,7 @@
     "update-main": "node util/update-main-package-dependencies.js",
     "build": "npm run create-index-all && npm run update-main && lerna run build",
     "prod": "npm run build && lerna publish",
-    "publish": "lerna publish"
+    "publish": "lerna publish",
+    "upgrade": "npx lerna-update-wizard"
   }
 }
