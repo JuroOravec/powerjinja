@@ -16,7 +16,7 @@ export function createInstance(definitions?: DefinitionInjector.IDefinition) {
   });
   (instance as any).compile = function(text: string, opt) {
     let options = Object.assign({ reference: true }, opt);
-    instance.inject(text, options);
+    return instance.inject(text, options);
   };
 
   return instance;
