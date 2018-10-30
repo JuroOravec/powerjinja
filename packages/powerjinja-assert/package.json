@@ -1,6 +1,6 @@
 {
   "name": "powerjinja-assert",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Powerjinja module providing assertion library",
   "keywords": [
     "powerjinja",
