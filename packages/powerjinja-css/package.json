@@ -1,6 +1,6 @@
 {
   "name": "powerjinja-css",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Powerjinja module for constructing CSS syntax and adding vendor prefixes",
   "keywords": [
     "powerjinja",
@@ -31,6 +31,6 @@
   },
   "build": "tsc",
   "dependencies": {
-    "powerjinja-core": "^0.4.0"
+    "powerjinja-core": "^0.4.1"
   }
 }
