@@ -1,6 +1,6 @@
 {
   "name": "powerjinja-array",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "Powerjinja module for working with arrays and array transformations.",
   "keywords": [
     "powerjinja",
@@ -32,6 +32,6 @@
   },
   "build": "tsc",
   "dependencies": {
-    "powerjinja-core": "^0.4.1"
+    "powerjinja-core": "^0.4.4"
   }
 }

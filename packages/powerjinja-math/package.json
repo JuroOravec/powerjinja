@@ -1,6 +1,6 @@
 {
   "name": "powerjinja-math",
-  "version": "0.4.1",
+  "version": "0.4.4",
   "description": "Powerjinja module for common math operations and number transformations.",
   "keywords": [
     "powerjinja",
@@ -32,6 +32,6 @@
   "main": "./lib/index.js",
   "build": "tsc",
   "dependencies": {
-    "powerjinja-core": "^0.4.1"
+    "powerjinja-core": "^0.4.4"
   }
 }

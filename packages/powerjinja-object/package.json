@@ -1,6 +1,6 @@
 {
   "name": "powerjinja-object",
-  "version": "0.4.1",
+  "version": "0.4.4",
   "description": "Powerjinja module for working with objects (dictionaries) and object transformations.",
   "keywords": [
     "powerjinja",
@@ -32,6 +32,6 @@
   },
   "build": "tsc",
   "dependencies": {
-    "powerjinja-core": "^0.4.1"
+    "powerjinja-core": "^0.4.4"
   }
 }
