@@ -1,6 +1,6 @@
 {
   "name": "powerjinja",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "In-template data manipulation library with a functional twist for jinja2 templating language.",
   "keywords": [
     "powerjinja",
@@ -31,7 +31,7 @@
   "build": "tsc",
   "dependencies": {
     "powerjinja-arguments": "^0.3.1",
-    "powerjinja-array": "^0.3.1",
+    "powerjinja-array": "^0.3.2",
     "powerjinja-assert": "^0.3.1",
     "powerjinja-boolean": "^0.3.1",
     "powerjinja-core": "^0.3.1",
