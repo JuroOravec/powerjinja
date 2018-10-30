@@ -24,7 +24,10 @@
     "tsc": "tsc",
     "build": "tsc",
     "start": "npm run build && node lib",
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "publish-patch": "npm publish patch",
+    "publish-minor": "npm publish minor",
+    "publish-major": "npm publish major"
   },
   "main": "./lib/index.js",
   "build": "tsc",
