@@ -15,7 +15,7 @@ import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
  */
 export const any = `
 {%- macro any(arg1=[], arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
-	{%- trues = [] -%}
+	{%- set trues = [] -%}
 	{%- for i in arg1 -%}
 		{%- if not i -%}
 			{%- append i to trues -%}
