@@ -7,11 +7,17 @@ import { variableNameReplacer } from "./config/variable-name-replacer";
 import { declarationFormatter } from "./config/declaration-formatter";
 
 export function createInstance(definitions?: DefinitionInjector.IDefinition) {
-  return init({
+  const instance = init({
     definitions,
     minifier,
     variableNameReplacer,
     variableNameRetriever,
     declarationFormatter
   });
+  (instance as any).compile = function(text: string, opt) {
+    let options = Object.assign({ reference: true }, opt);
+    instance.inject(text, options);
+  };
+
+  return instance;
 }
