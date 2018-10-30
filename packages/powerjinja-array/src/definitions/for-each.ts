@@ -20,6 +20,6 @@ export const forEach = `
 	{%- for i in arg1 -%}
 		{{- arg2(i) -}}
 	{%- endfor -%}
-	{{- handle_queue(arg1, arg2, arg3, arg4, arg5, macros, index) -}}
+	{{- powerjinja.core.handle_queue(arg1, arg2, arg3, arg4, arg5, macros, index) -}}
 {%- endmacro -%}
 `;

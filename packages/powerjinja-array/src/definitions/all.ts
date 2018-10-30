@@ -22,6 +22,6 @@ export const all = `
 		{%- endif -%}
 	{%- endfor -%}
 	{%- set result = falses | count == 0 -%}
-	{{- handle_queue(result, arg2, arg3, arg4, arg5, macros, index) -}}
+	{{- powerjinja.core.handle_queue(result, arg2, arg3, arg4, arg5, macros, index) -}}
 {%- endmacro -%}
 `;
