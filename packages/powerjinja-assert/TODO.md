@@ -1,5 +1,9 @@
 # TODO
 
+## value
+
+- is_url
+
 ## string
 
 - of format (follow python formatting here, e.g. "%s/%s/%s" or maybe sth like this? "%d{4}/%d{2}/%d{2}" )
