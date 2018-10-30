@@ -5,6 +5,7 @@ export function minifier(str) {
 
   let stringLiteral = false;
   let insideStatement = false;
+  let insideObject = 0;
   let minifiedtext = "";
 
   for (let i = 0; i < str.length; i++) {
@@ -96,6 +97,12 @@ export function minifier(str) {
           break;
         }
 
+        if (str[i] === "}" && insideObject > 0) {
+          insideObject -= 1;
+          minifiedtext += str[i];
+          break;
+        }
+
         if (str[i + 1] === "}") {
           insideStatement = false;
           minifiedtext += str[i++];
@@ -108,6 +115,7 @@ export function minifier(str) {
       case "{":
         if (insideStatement) {
           minifiedtext += str[i];
+          insideObject += 1;
           break;
         }
 
