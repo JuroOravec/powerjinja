@@ -31,6 +31,6 @@ export const map = `
 	{%- for i in arg1 -%}
 		{{- arg2(i, loop.index0, arg1, macros=[_map_cb]) -}}
 	{%- endfor -%}
-	{{- handle_queue(mapped_values, arg2, arg3, arg4, arg5, macros, index) -}}
+	{{- powerjinja.core.handle_queue(mapped_values, arg2, arg3, arg4, arg5, macros, index) -}}
 {%- endmacro -%}
 `;

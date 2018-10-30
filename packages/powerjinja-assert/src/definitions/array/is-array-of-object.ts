@@ -12,7 +12,7 @@ export const isArrayOfObject = `
 	{%- endmacro -%}
 	{%- for item in arg1 -%}
 		{{- powerjinja.assert.value.is_object(item, macros=[_is_array_of_object_cb]) -}}
-	{%- endif -%}
+	{%- endfor -%}
 	{%- set result = errs |count == 0 -%}
 	{{- powerjinja.core.handle_queue(result, arg2, arg3, arg4, arg5, macros, index) -}}
 {%- endmacro -%}
