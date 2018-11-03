@@ -25,11 +25,12 @@ import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
  * // Hello Claude!
  */
 export function map(config: Powerjinja["config"]) {
+  const append = config.command.append;
   return `
 {%- macro map(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{%- set mapped_values = [] -%}
 	{%- macro _map_cb(_1=None, _2=None, _3=None, _4=None, _5=None, _6=[], _7=0) -%}
-		{%- append _1 to mapped_values -%}
+		{%- ${append("mapped_values", "_1")} -%}
 	{%- endmacro -%}
 	{%- for i in arg1 -%}
 		{{- arg2(i, loop.index0, arg1, macros=[_map_cb]) -}}

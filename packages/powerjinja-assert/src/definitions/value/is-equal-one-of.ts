@@ -17,12 +17,13 @@ import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
  * // prints True
  */
 export function isEqualOneOf(config: Powerjinja["config"]) {
-  return `
+  const append = config.command.append;
+return `
 {%- macro is_equal_one_of(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{%- set match = [] -%}
 	{%- for item in arg2 -%}
 		{%- if item == arg1 -%}
-			{%- append item to match -%}
+			{%- ${append("match", "item")} -%}
 		{%- endif -%}
 	{%- endfor -%}
 	{%- set result = match | count > 0 -%}

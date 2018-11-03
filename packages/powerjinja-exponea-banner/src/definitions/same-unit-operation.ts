@@ -18,7 +18,8 @@ import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
  * @ignore
  */
 export function sameUnitOperation(config: Powerjinja["config"]) {
-  return `
+  const append = config.command.append;
+return `
 {%- macro same_unit_operation(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{%- set unit = [] -%}
 	{%- set unitless_vals = [] -%}
@@ -27,7 +28,7 @@ export function sameUnitOperation(config: Powerjinja["config"]) {
 	{%- if arg2 | count > 0 -%}
 		{%- for char in arg2[0] -%}
 			{%- if char | int('') == '' and char != '.' -%}
-				{%- append char to unit -%}
+				{%- ${append("unit", "char")} -%}
 			{%- endif -%}
 		{%- endfor -%} 
 	{%- endif -%}
@@ -38,7 +39,7 @@ export function sameUnitOperation(config: Powerjinja["config"]) {
 			{%- for char in val -%}
 				{%- set charAsInt = char | int('') -%}
 				{%- if charAsInt != '' or char == '.' -%}
-					{%- append charAsInt to unitless_val -%}
+					{%- ${append("unitless_val", "charAsInt")} -%}
 				{%- endif -%}
 			{%- endfor -%}
 		{%- append unitless_val | join('') | int to unitless_vals -%}

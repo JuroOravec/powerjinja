@@ -8,7 +8,8 @@ import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 // - sum filter
 
 export function dot(config: Powerjinja["config"]) {
-  return `
+  const append = config.command.append;
+return `
 {%- macro dot(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{%- if arg2 | count > arg1 | count -%}
 		{%- set d = arg2 | count -%}
@@ -28,7 +29,7 @@ export function dot(config: Powerjinja["config"]) {
 			{%- set p2_val = 0 -%}
 		{%- endif -%}
 		{%- set mul = p2_val * p1_val -%}
-		{%- append mul to muls -%}
+		{%- ${append("muls", "mul")} -%}
 	{%- endfor -%}
 	{%- set result = muls | sum -%}
 	{{- powerjinja.core.handle_queue(result, arg2, arg3, arg4, arg5, macros, index) -}}

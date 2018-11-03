@@ -14,15 +14,16 @@ import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 // Creates zero matrix of width `arg1` and height `arg2`
 
 export function zeroMatrix(config: Powerjinja["config"]) {
-  return `
+  const append = config.command.append;
+return `
 {%- macro zero_matrix(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{%- set m = [] -%}
 	{%- for i in range(arg2) -%}
 		{%- set v = [] -%}
 		{%- for j in range(arg1) -%}
-			{%- append 0 to v -%}
+			{%- ${append("v", "0")} -%}
 		{%- endfor -%}
-		{%- append v to m -%}
+		{%- ${append("m", "v")} -%}
 	{%- endfor -%}
 	{{- powerjinja.core.handle_queue(m, arg2, arg3, arg4, arg5, macros, index) -}}
 {%- endmacro -%}

@@ -26,6 +26,9 @@ module.exports = function fixDefinitionTypos(package) {
 
         defContent = defContent.match(/import \{ Powerjinja \} from "\.\.\/interface\/powerjinja";/) && corePackage !== def.package.kebabCase ? defContent.replace(/import \{ Powerjinja \} from "\.\.\/interface\/powerjinja";/, `import { Powerjinja } from "${corePackage}/lib/interface/powerjinja";`) : defContent;
 
+        defContent = defContent.match(/append ([a-zA-Z0-9_]+) to ([a-zA-Z0-9_]+)/) && !defContent.match(/const append = config\.command\.append/) ? defContent.replace(/return `/, 'const append = config\.command\.append;\nreturn `') : defContent;
+        defContent = defContent.replace(/append ([a-zA-Z0-9_]+) to ([a-zA-Z0-9_]+)/g, (match, cap1, cap2) => '${append("' + cap2 + '", "' + cap1 + '")}');
+
         fs.writeFileSync(def.path, defContent);
         console.log(`The definition ${def.camelCase} has been updated!`);
     });

@@ -9,7 +9,8 @@ import { sqrt } from "./sqrt";
 // - sum filter
 
 export function distance(config: Powerjinja["config"]) {
-  return `
+  const append = config.command.append;
+return `
 {%- macro distance(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{%- macro _distance_callback(res=None, _2=None, _3=None, _4=None, _5=None, _6=[], _7=0) -%}
 		{{- powerjinja.core.handle_queue(res, arg2, arg3, arg4, arg5, macros, index) -}}
@@ -33,7 +34,7 @@ export function distance(config: Powerjinja["config"]) {
 		{%- endif -%}
 		{%- set dif = p2_val - p1_val -%}
 		{%- set dif_sq = dif * dif -%}
-		{%- append dif_sq to dif_sqs -%}
+		{%- ${append("dif_sqs", "dif_sq")} -%}
 	{%- endfor -%}
 	{%- set dif_sqs_sum = dif_sqs | sum -%}
 	{{- powerjinja.math.sqrt(dif_sqs_sum, macros=[_distance_callback]) -}}

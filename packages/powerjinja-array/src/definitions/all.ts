@@ -16,12 +16,13 @@ import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
  * // prints False
  */
 export function all(config: Powerjinja["config"]) {
+  const append = config.command.append;
   return `
 {%- macro all(arg1=[], arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{%- set falses = [] -%}
 	{%- for i in arg1 -%}
 		{%- if not i -%}
-			{%- append i to falses -%}
+			{%- ${append("falses", "i")} -%}
 		{%- endif -%}
 	{%- endfor -%}
 	{%- set result = falses | count == 0 -%}

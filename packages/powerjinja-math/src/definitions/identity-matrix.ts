@@ -14,7 +14,8 @@ import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 // Creates identity matrix of width and height `arg1`
 
 export function identityMatrix(config: Powerjinja["config"]) {
-  return `
+  const append = config.command.append;
+return `
 {%- macro identity_matrix(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{%- set m = [] -%}
 	{%- for i in range(arg1) -%}
@@ -25,9 +26,9 @@ export function identityMatrix(config: Powerjinja["config"]) {
 			{%- else -%}
 				{%- set val = 0 -%}
 			{%- endif -%}
-			{%- append val to v -%}
+			{%- ${append("v", "val")} -%}
 		{%- endfor -%}
-		{%- append v to m -%}
+		{%- ${append("m", "v")} -%}
 	{%- endfor -%}
 	{{- powerjinja.core.handle_queue(m, arg2, arg3, arg4, arg5, macros, index) -}}
 {%- endmacro -%}

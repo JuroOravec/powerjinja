@@ -12,7 +12,8 @@ import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 //
 
 export function addMatrix(config: Powerjinja["config"]) {
-  return `
+  const append = config.command.append;
+return `
 {%- macro add_matrix(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{%- set h = arg1 | count -%}
 	{%- set w = arg1[0] | count -%}
@@ -23,9 +24,9 @@ export function addMatrix(config: Powerjinja["config"]) {
 			{%- set val_m1 = [arg1][0][i][j] -%}
 			{%- set val_m2 = [arg2][0][i][j] -%}
 			{%- set val = val_m1 + val_m2 -%}
-			{%- append val to v -%}
+			{%- ${append("v", "val")} -%}
 		{%- endfor -%}
-		{%- append v to m -%}
+		{%- ${append("m", "v")} -%}
 	{%- endfor -%}
 	{{- powerjinja.core.handle_queue(m, arg2, arg3, arg4, arg5, macros, index) -}}
 {%- endmacro -%}

@@ -12,7 +12,8 @@ import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 //
 
 export function multiplyMatrixByMatrix(config: Powerjinja["config"]) {
-  return `
+  const append = config.command.append;
+return `
 {%- macro multiply_matrix_by_matrix(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{%- set h_m1 = arg1 | count -%}
 	{%- set w_m1 = arg1[0] | count -%}
@@ -26,11 +27,11 @@ export function multiplyMatrixByMatrix(config: Powerjinja["config"]) {
 				{%- set val_m1 = [arg1][0][i_m1][j_m1] -%}
 				{%- set val_m2 = [arg2][0][j_m1][j_m2] -%}
 				{%- set val = val_m1 * val_m2 -%}
-				{%- append val to sums -%}
+				{%- ${append("sums", "val")} -%}
 			{%- endfor -%}
 			{%- append sums | sum to v -%}
 		{%- endfor -%}
-		{%- append v to m -%}
+		{%- ${append("m", "v")} -%}
 	{%- endfor -%}
 	{{- powerjinja.core.handle_queue(m, arg2, arg3, arg4, arg5, macros, index) -}}
 {%- endmacro -%}

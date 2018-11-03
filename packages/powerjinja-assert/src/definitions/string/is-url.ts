@@ -9,7 +9,8 @@ import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 // Hostname is checked according to https://stackoverflow.com/questions/3523028/valid-characters-of-a-hostname/3523068#3523068
 
 export function isUrl(config: Powerjinja["config"]) {
-  return `
+  const append = config.command.append;
+return `
 {%- macro is_url(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{%- if arg1 is string -%}
 		{%- set url = arg1.strip() -%}
@@ -27,11 +28,11 @@ export function isUrl(config: Powerjinja["config"]) {
 		{%- for label in hostnameLabels -%}
 			{%- if errs|count == 0 -%}
 				{%- if label.length < 1 or label.length > 63 -%}
-					{%- append 1 to errs -%}
+					{%- ${append("errs", "1")} -%}
 				{%- else -%}
 					{%- for char in label -%}
 						{%- if char not in allowedChars -%}
-							{%- append 1 to errs -%}
+							{%- ${append("errs", "1")} -%}
 						{%- endif -%}
 					{%- endfor -%}
 				{%- endif -%}

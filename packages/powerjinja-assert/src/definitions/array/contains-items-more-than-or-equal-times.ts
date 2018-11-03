@@ -4,13 +4,14 @@ import { Powerjinja } from "powerjinja-core/lib/interface/powerjinja";
 import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 
 export function containsItemsMoreThanOrEqualTimes(config: Powerjinja["config"]) {
-  return `
+  const append = config.command.append;
+return `
 {%- macro contains_items_more_than_or_equal_times(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{%- set match = [] -%}
 	{%- for item in arg2 -%}
 		{%- set occr = arg1.count(item) -%}
 		{%- if occr >= arg3 -%}
-			{%- append occr to match -%}
+			{%- ${append("match", "occr")} -%}
 		{%- endif -%}
 	{%- endfor -%}
 	{%- set result = match | count == arg2 | count and (arg1|count > 0) -%}
