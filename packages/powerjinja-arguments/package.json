@@ -1,6 +1,6 @@
 {
   "name": "powerjinja-arguments",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Powerjinja module for handling arguments passed to other macros.",
   "keywords": [
     "powerjinja",
@@ -31,6 +31,6 @@
   },
   "build": "tsc",
   "dependencies": {
-    "powerjinja-core": "^0.5.1"
+    "powerjinja-core": "^0.5.2"
   }
 }
