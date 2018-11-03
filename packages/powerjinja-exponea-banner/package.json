@@ -1,6 +1,6 @@
 {
   "name": "powerjinja-exponea-banner",
-  "version": "0.4.4",
+  "version": "0.5.0",
   "description": "Powerjinja module for helper functions for creating pure-CSS banner templates",
   "keywords": [
     "powerjinja",
@@ -31,6 +31,6 @@
   },
   "build": "tsc",
   "dependencies": {
-    "powerjinja-core": "^0.4.4"
+    "powerjinja-core": "^0.5.0"
   }
 }
