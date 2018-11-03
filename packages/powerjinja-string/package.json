@@ -1,6 +1,6 @@
 {
   "name": "powerjinja-string",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "Powerjinja module for working with strings and string transformations.",
   "keywords": [
     "powerjinja",
@@ -31,6 +31,6 @@
   },
   "build": "tsc",
   "dependencies": {
-    "powerjinja-core": "^0.5.2"
+    "powerjinja-core": "^0.5.3"
   }
 }
