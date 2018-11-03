@@ -1,3 +1,5 @@
+import { Powerjinja } from "powerjinja-core/lib/interface/powerjinja";
+
 // Declared dependencies for housekeeping
 import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 
@@ -13,7 +15,8 @@ import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
  * {{- powerjinja.array.any([0, '', [], {}], macros=[powerjinja.core.print]) -}}
  * // prints False
  */
-export const any = `
+export function any(config: Powerjinja["config"]) {
+  return `
 {%- macro any(arg1=[], arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{%- set trues = [] -%}
 	{%- for i in arg1 -%}
@@ -25,3 +28,4 @@ export const any = `
 	{{- powerjinja.core.handle_queue(result, arg2, arg3, arg4, arg5, macros, index) -}}
 {%- endmacro -%}
 `;
+}

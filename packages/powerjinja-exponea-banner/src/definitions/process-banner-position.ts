@@ -1,3 +1,5 @@
+import { Powerjinja } from "powerjinja-core/lib/interface/powerjinja";
+
 // Declared dependencies for housekeeping
 import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 import { processHorizontalPosition } from "./process-horizontal-position";
@@ -43,7 +45,11 @@ import { processVerticalPosition } from "./process-vertical-position";
 //   }
 // arg3: isFitContent // whether the banner height is set to fit content
 
-export const processBannerPosition = `
+/**
+ * @ignore
+ */
+export function processBannerPosition(config: Powerjinja["config"]) {
+  return `
 {%- macro process_banner_position(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{%- macro _cb2(h_vals=None, _2=None, _3=None, _4=None, v_vals=None, _6=[], _7=0) -%}
 		{{- powerjinja.css.translate("translateY('" ~ v_vals.translation ~ "')") -}}
@@ -80,3 +86,4 @@ export const processBannerPosition = `
 	{{- powerjinja.exponea_banner.process_vertical_position(arg1[0], arg1[1], arg1[2], arg3, macros=[_cb1, powerjinja.exponea_banner.process_horizontal_position, _cb2 ]) -}}
 {%- endmacro -%}
 `;
+}

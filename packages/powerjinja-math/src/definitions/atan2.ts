@@ -1,9 +1,12 @@
+import { Powerjinja } from "powerjinja-core/lib/interface/powerjinja";
+
 // Declared dependencies for housekeeping
 import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 import { atan } from "./atan";
 import { pi } from "./pi";
 
-export const atan2 = `
+export function atan2(config: Powerjinja["config"]) {
+  return `
 {%- macro atan2(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{%- if arg2 > 0 -%}
 		{{- powerjinja.math.atan(arg1 / arg2, macros=[_atan2_callback]) -}}
@@ -38,3 +41,4 @@ export const atan2 = `
 	{%- endif -%}
 {%- endmacro -%}
 `;
+}

@@ -1,8 +1,11 @@
+import { Powerjinja } from "powerjinja-core/lib/interface/powerjinja";
+
 // Declared dependencies for housekeeping
 import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 import { exp } from "./exp";
 
-export const expm1 = `
+export function expm1(config: Powerjinja["config"]) {
+  return `
 {%- macro expm1(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{%- macro _expm1_callback(res=None, _2=None, _3=None, _4=None, _5=None, _6=[], _7=0) -%}
 		{%- set result = res - 1 -%}
@@ -11,3 +14,4 @@ export const expm1 = `
 	{{- powerjinja.math.exp(arg1, macros=[_expm1_callback]) -}}
 {%- endmacro -%}
 `;
+}

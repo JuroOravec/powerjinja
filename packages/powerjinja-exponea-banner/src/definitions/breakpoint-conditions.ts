@@ -1,3 +1,5 @@
+import { Powerjinja } from "powerjinja-core/lib/interface/powerjinja";
+
 // Declared dependencies for housekeeping
 import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 
@@ -9,7 +11,11 @@ import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 // arg1: dimension; arg2: breakpointValue;
 // E.g. 'height', '300px'
 
-export const breakpointConditions = `
+/**
+ * @ignore
+ */
+export function breakpointConditions(config: Powerjinja["config"]) {
+  return `
 {%- macro breakpoint_conditions(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{{- '(-webkit-min-device-pixel-ratio: 2) and (max-' ~ arg1 ~ ': ' ~ arg2 ~ '),' -}}
 	{{- '(min--moz-device-pixel-ratio: 2) and (max-' ~ arg1 ~ ': ' ~ arg2 ~ '),' -}}
@@ -21,3 +27,4 @@ export const breakpointConditions = `
 	{{- powerjinja.core.handle_queue(result, arg2, arg3, arg4, arg5, macros, index) -}}
 {%- endmacro -%}
 `;
+}

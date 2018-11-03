@@ -1,6 +1,5 @@
-import { powerjinjaCore } from "powerjinja-core";
+import { initialize as _initialize } from "./powerjinja/initialize";
 
+export const initialize = _initialize;
 
-
-export const powerjinjaObject = powerjinjaCore;
-
+export const powerjinjaObject = _initialize();

@@ -1,32 +1,5 @@
-import { createInstance } from "powerjinja-core/lib/create-instance";
+import { initialize as _initialize } from "./powerjinja/initialize";
 
-import { powerjinjaArguments } from "powerjinja-arguments";
-import { powerjinjaArray } from "powerjinja-array";
-import { powerjinjaAssert } from "powerjinja-assert";
-import { powerjinjaBoolean } from "powerjinja-boolean";
-import { powerjinjaCore } from "powerjinja-core";
-import { powerjinjaCss } from "powerjinja-css";
-import { powerjinjaExponeaBanner } from "powerjinja-exponea-banner";
-import { powerjinjaMath } from "powerjinja-math";
-import { powerjinjaObject } from "powerjinja-object";
-import { powerjinjaString } from "powerjinja-string";
+export const initialize = _initialize;
 
-const definitions = [
-  powerjinjaArguments,
-  powerjinjaArray,
-  powerjinjaAssert,
-  powerjinjaBoolean,
-  powerjinjaCore,
-  powerjinjaCss,
-  powerjinjaExponeaBanner,
-  powerjinjaMath,
-  powerjinjaObject,
-  powerjinjaString
-];
-
-const definitionsObject = Object.assign(
-  {},
-  ...definitions.map(def => def.getAll({ select: "all", type: "full" }))
-);
-
-export const powerjinja = createInstance(definitionsObject);
+export const powerjinja = _initialize();

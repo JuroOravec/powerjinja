@@ -1,9 +1,12 @@
+import { Powerjinja } from "powerjinja-core/lib/interface/powerjinja";
+
 // Declared dependencies for housekeeping
 import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 import { ln } from "./ln";
 import { ln2 } from "./ln2";
 
-export const log2 = `
+export function log2(config: Powerjinja["config"]) {
+  return `
 {%- macro log2(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{%- if (arg1 == 'nan' | float) or (arg1 < 0 or arg1 == '-inf' | float) or arg1 == 1 -%}
 		{%- if arg1 == 1 -%}
@@ -24,3 +27,4 @@ export const log2 = `
 	{%- endif -%}
 {%- endmacro -%}
 `;
+}

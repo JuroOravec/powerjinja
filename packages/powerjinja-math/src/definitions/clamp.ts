@@ -1,7 +1,10 @@
+import { Powerjinja } from "powerjinja-core/lib/interface/powerjinja";
+
 // Declared dependencies for housekeeping
 import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 
-export const clamp = `
+export function clamp(config: Powerjinja["config"]) {
+  return `
 {%- macro clamp(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{%- if arg1 < arg2 -%}
 		{%- set result = arg2 -%}
@@ -13,3 +16,4 @@ export const clamp = `
 	{{- powerjinja.core.handle_queue(result, arg2, arg3, arg4, arg5, macros, index) -}}
 {%- endmacro -%}
 `;
+}

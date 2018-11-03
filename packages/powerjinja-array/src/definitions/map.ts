@@ -1,3 +1,5 @@
+import { Powerjinja } from "powerjinja-core/lib/interface/powerjinja";
+
 // Declared dependencies for housekeeping
 import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 
@@ -6,7 +8,7 @@ import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
  * Note that mapping macro must implement following structure:
  * {%- macro my_macro(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
  * 	 // My mapping logic here...
- *   {{- handle_queue(result, arg2, arg3, arg4, arg5, macros, index) -}}
+ *   {{- powerjinja.core.handle_queue(result, arg2, arg3, arg4, arg5, macros, index) -}}
  * {%- endmacro -%}
  * @param {iterable} list any iterable whose values will be passed to the macro
  * @param {callable} macro macro that is executed with values from the list
@@ -14,7 +16,7 @@ import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
  * @example
  * {%- macro format_greeting(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
  * 	 {%- set greeting = "Hello" ~ arg1 ~ "!\n" -%}
- *   {{- handle_queue(greeting, arg2, arg3, arg4, arg5, macros, index) -}}
+ *   {{- powerjinja.core.handle_queue(greeting, arg2, arg3, arg4, arg5, macros, index) -}}
  * {%- endmacro -%}
  * {{- powerjinja.array.for_each(["Anna", "Bob", "Claude"], format_greeting, macros=[powerjinja.core.print]) -}}
  * // prints:
@@ -22,7 +24,8 @@ import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
  * // Hello Bob!
  * // Hello Claude!
  */
-export const map = `
+export function map(config: Powerjinja["config"]) {
+  return `
 {%- macro map(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{%- set mapped_values = [] -%}
 	{%- macro _map_cb(_1=None, _2=None, _3=None, _4=None, _5=None, _6=[], _7=0) -%}
@@ -34,3 +37,4 @@ export const map = `
 	{{- powerjinja.core.handle_queue(mapped_values, arg2, arg3, arg4, arg5, macros, index) -}}
 {%- endmacro -%}
 `;
+}

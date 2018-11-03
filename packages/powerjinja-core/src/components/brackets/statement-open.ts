@@ -1,2 +1,2 @@
 // statement open
-export const so = "{%-";
+export const so = "{%";

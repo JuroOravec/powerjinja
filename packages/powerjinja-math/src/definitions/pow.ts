@@ -1,10 +1,13 @@
+import { Powerjinja } from "powerjinja-core/lib/interface/powerjinja";
+
 // Declared dependencies for housekeeping
 import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 import { exp } from "./exp";
 import { ln } from "./ln";
 import { multiply } from "./multiply";
 
-export const pow = `
+export function pow(config: Powerjinja["config"]) {
+  return `
 {%- macro pow(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{%- if arg2 == 0 or (arg2 < 0 and (arg1 == 0 or arg1 ==1 or arg1 == -1)) %}
 		{%- if arg2 == 0 -%}
@@ -25,3 +28,4 @@ export const pow = `
 	{% endif %}
 {%- endmacro -%}
 `;
+}

@@ -1,3 +1,5 @@
+import { Powerjinja } from "powerjinja-core/lib/interface/powerjinja";
+
 // Declared dependencies for housekeeping
 import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 
@@ -15,7 +17,8 @@ import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
  * // Hello Bob!
  * // Hello Claude!
  */
-export const forEach = `
+export function forEach(config: Powerjinja["config"]) {
+  return `
 {%- macro for_each(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{%- for i in arg1 -%}
 		{{- arg2(i) -}}
@@ -23,3 +26,4 @@ export const forEach = `
 	{{- powerjinja.core.handle_queue(arg1, arg2, arg3, arg4, arg5, macros, index) -}}
 {%- endmacro -%}
 `;
+}

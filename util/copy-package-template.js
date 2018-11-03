@@ -2,14 +2,10 @@ const fs = require('fs');
 const path = require('path');
 const fsExtra = require('fs-extra');
 
-module.exports = function copyPackageTemplate(packageName) {
-    if (!packageName) {
-        throw Error('No package given!');
-    }
+const assertPackageName = require('./lib/assert-package-name');
 
-    if (!fs.existsSync(path.resolve('package-template'))) {
-        throw Error('Cannot find package template!');
-    }
+module.exports = function copyPackageTemplate(packageName) {
+    assertPackageName(packageName);
 
     const packagePath = path.resolve('packages/' + packageName);
     const packageJsonPath = path.resolve(packagePath + '/package.json');

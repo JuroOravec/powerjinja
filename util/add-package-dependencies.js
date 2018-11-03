@@ -1,11 +1,9 @@
-const fs = require('fs');
-const path = require('path');
 const spawnSync = require('child_process').spawnSync;
 
+const assertPackageName = require('./lib/assert-package-name');
+
 module.exports = function addPackageDependencies(packageName) {
-    if (!fs.existsSync(path.resolve('packages/' + packageName))) {
-        throw Error(`No package with name "${packageName}" found!`);
-    }
+    assertPackageName(packageName);
 
     const cmd = spawnSync('lerna', ['add', 'powerjinja-core', `--scope=${packageName}`]);
     if (cmd.error) {

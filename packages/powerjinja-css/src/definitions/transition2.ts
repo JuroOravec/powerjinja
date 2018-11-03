@@ -1,3 +1,5 @@
+import { Powerjinja } from "powerjinja-core/lib/interface/powerjinja";
+
 // Declared dependencies for housekeeping
 import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 
@@ -11,7 +13,8 @@ import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 // To specify unique duration and timing values, include an array of [attribute, duration, timing] instead of attribute
 // E.g. ['top', ['bottom', '0.1s', 'ease-in'], 'left'], '0.5s', 'ease-in-out'
 
-export const transition2 = `
+export function transition2(config: Powerjinja["config"]) {
+  return `
 {%- macro transition2(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{%- set prefixes = ['-webkit-', '-o-', '-moz-', ''] -%}
 	{%- set defaults = ["", duration, timing] -%}
@@ -35,3 +38,4 @@ export const transition2 = `
 	{{- powerjinja.core.handle_queue(result, arg2, arg3, arg4, arg5, macros, index) -}}
 {%- endmacro -%}
 `;
+}

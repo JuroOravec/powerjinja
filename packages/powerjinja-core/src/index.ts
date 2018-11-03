@@ -1,7 +1,5 @@
-import { createInstance } from "./create-instance";
+import { initialize as _initialize } from "./powerjinja/initialize";
 
-import { handleQueue } from './definitions/handle-queue'
+export const initialize = _initialize;
 
-export const powerjinjaCore = createInstance();
-
-powerjinjaCore.define('powerjinja.core.handle_queue', handleQueue);
+export const powerjinjaCore = _initialize();

@@ -1,3 +1,5 @@
+import { Powerjinja } from "powerjinja-core/lib/interface/powerjinja";
+
 // Declared dependencies for housekeeping
 import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 
@@ -23,7 +25,11 @@ import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 //   "translation": string // value for transform CSS property that will translate the banner in vertical dimension
 // }
 
-export const processVerticalPosition = `
+/**
+ * @ignore
+ */
+export function processVerticalPosition(config: Powerjinja["config"]) {
+  return `
 {%- macro process_vertical_position(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{%- set position_map = {'top': 'bottom', 'bottom': 'top'} -%}
 	{%- if arg1 == 'top' or arg1 == 'bottom' -%}
@@ -46,3 +52,4 @@ export const processVerticalPosition = `
 	{{- powerjinja.core.handle_queue(result, arg2, arg3, arg4, arg5, macros, index) -}}
 {%- endmacro -%}
 `;
+}

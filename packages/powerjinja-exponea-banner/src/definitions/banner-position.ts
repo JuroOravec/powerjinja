@@ -1,3 +1,5 @@
+import { Powerjinja } from "powerjinja-core/lib/interface/powerjinja";
+
 // Declared dependencies for housekeeping
 import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 import { attributeWithCalc } from "./attribute-with-calc";
@@ -33,7 +35,11 @@ import { attributeWithCalc } from "./attribute-with-calc";
 // arg2: {"pos": 'left', "pos_opp": 'right', "size": 'width', "offset": '2em'};
 // arg3: True
 
-export const bannerPosition = `
+/**
+ * @ignore
+ */
+export function bannerPosition(config: Powerjinja["config"]) {
+  return `
 {%- macro banner_position(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{%- for dir in [arg1, arg2] -%}
 		{{- powerjinja.exponea_banner.attribute_with_calc(dir.pos, dir.size ) -}}
@@ -46,3 +52,4 @@ export const bannerPosition = `
 	{{- powerjinja.core.handle_queue(arg1, arg2, arg3, arg4, arg5, macros, index) -}}
 {%- endmacro -%}
 `;
+}

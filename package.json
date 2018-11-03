@@ -9,15 +9,17 @@
   },
   "scripts": {
     "create-package": "node util/create-package.js",
-    "create-index": "node util/create-package-index-file.js",
-    "create-index-core": "node util/create-core-index-file.js",
-    "create-index-modules": "node util/create-all-core-dependant-index-files.js",
-    "create-index-all": "npm run create-index-core && npm run create-index-modules",
-    "fix-typos": "node util/fix-definition-typos.js",
+    "create:definition-loader": "node util/definition-loader/create-definition-loader-all.js",
+    "create:index": "node util/index/create-index-all.js",
+    "create:initialize": "node util/initialize/create-initialize-all.js",
+    "create:all": "npm run create:index && npm run create:initialize && npm run create:definition-loader",
+    "fix-typos": "node util/fix-definition-typos/fix-definition-typos-all.js",
     "update-main": "node util/update-main-package-dependencies.js",
     "build": "npm run create-index-all && npm run update-main && lerna run build",
     "prod": "npm run build && lerna publish",
     "publish": "lerna publish",
-    "upgrade": "npx lerna-update-wizard"
-  }
+    "upgrade": "npx lerna-update-wizard",
+    "doc": "node util/create-doc-data.js"
+  },
+  "dependencies": {}
 }

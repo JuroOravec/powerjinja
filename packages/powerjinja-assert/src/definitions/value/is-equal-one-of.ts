@@ -1,3 +1,5 @@
+import { Powerjinja } from "powerjinja-core/lib/interface/powerjinja";
+
 // Declared dependencies for housekeeping
 import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 
@@ -14,7 +16,8 @@ import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
  * {{- powerjinja.assert.value.is_equal_one_of(1 , [1, 2, 3],macros=[powerjinja.core.print]) -}}
  * // prints True
  */
-export const isEqualOneOf = `
+export function isEqualOneOf(config: Powerjinja["config"]) {
+  return `
 {%- macro is_equal_one_of(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{%- set match = [] -%}
 	{%- for item in arg2 -%}
@@ -26,3 +29,4 @@ export const isEqualOneOf = `
 	{{- powerjinja.core.handle_queue(result, arg2, arg3, arg4, arg5, macros, index) -}}
 {%- endmacro -%}
 `;
+}
