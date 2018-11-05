@@ -1,6 +1,6 @@
 {
   "name": "powerjinja-assert",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "Powerjinja module providing assertion library",
   "keywords": [
     "powerjinja",
@@ -31,6 +31,6 @@
   },
   "build": "tsc",
   "dependencies": {
-    "powerjinja-core": "^0.5.3"
+    "powerjinja-core": "^0.5.4"
   }
 }
