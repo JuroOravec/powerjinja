@@ -1,4 +1,4 @@
-import { initialize as initializePowerjinjaCore } from 'powerjinja-core';
+import { initialize as initializePowerjinjaCore } from "powerjinja-core";
 import { loadDefinitions } from "./load-definitions";
 import { Powerjinja } from "powerjinja-core/lib/interface/powerjinja";
 
