@@ -11,9 +11,9 @@ import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 // arg4: isFitContent (allows banner height to grow with content if true
 //
 // e.g.
-// arg1: 'top';
-// arg2: '300px';
-// arg3: '20px';
+// arg1: "top";
+// arg2: "300px";
+// arg3: "20px";
 // arg4: True
 
 // Returns object with data on vertical position:
@@ -35,22 +35,22 @@ export function processVerticalPosition(config: Powerjinja["config"]) {
 	{%- if arg1 == "top" or arg1 == "bottom" -%}
 		{%- set pos_vertical = arg1 -%}
 		{%- set pos_vertical_opp = [position_map][0][pos_vertical] -%}
-		{%- set translation_vertical = '0%' -%}
+		{%- set translation_vertical = "0%" -%}
 		{%- set offset_vertical = arg3 -%}
-	{%- elif arg1 == 'center' -%}
-		{%- set pos_vertical = 'top' -%}
+	{%- elif arg1 == "center" -%}
+		{%- set pos_vertical = "top" -%}
 		{%- set pos_vertical_opp = [position_map][0][pos_vertical] -%}
-		{%- if arg4 == 'true' or arg4 == True -%}
-			{%- set offset_vertical = '50%' %}
-			{%- set translation_vertical = '-50%' -%}
+		{%- if arg4 == "true" or arg4 == True -%}
+			{%- set offset_vertical = "50%" %}
+			{%- set translation_vertical = "-50%" -%}
 		{%- else -%}
-			{%- set offset_vertical = '50% - ( ' ~  arg2 ~ ' / 2 ) ' -%}
-			{%- set translation_vertical = '0%' -%}
+			{%- set offset_vertical = "50% - ( " ~  arg2 ~ " / 2 ) " -%}
+			{%- set translation_vertical = "0%" -%}
 		{%- endif %}
 	{%- else -%}
-		{%- set pos_vertical = 'top' -%}
+		{%- set pos_vertical = "top" -%}
 		{%- set pos_vertical_opp = [position_map][0][pos_vertical] -%}
-		{%- set translation_vertical = '0%' -%}
+		{%- set translation_vertical = "0%" -%}
 		{%- set offset_vertical = arg3 -%}
 	{%- endif %}
 	{%- set result = {"pos": pos_vertical, "pos_opp": pos_vertical_opp, "size": arg2, "offset": offset_vertical, "translation": translation_vertical} -%}

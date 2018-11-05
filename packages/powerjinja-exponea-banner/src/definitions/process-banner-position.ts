@@ -7,22 +7,22 @@ import { processVerticalPosition } from "./process-vertical-position";
 
 // Process the values for position attributes based on axis of slide-in animation #}
 // 1) Determine the names and values of position attributes and of offsets #}
-// 2) Determine whether offset should be changed to large negative value in case of 'off-screen' position
+// 2) Determine whether offset should be changed to large negative value in case of "off-screen" position
 // 3) Determine which position attributes are along and perpendicular to axis of animation and call printPosition #}
-// isFitContent allows banner height to grow with content if 'true' #}
+// isFitContent allows banner height to grow with content if "true" #}
 
 // arg1: [positionName, bannerSize, offset]; // vertical axis
 // arg2: [positionName, bannerSize, offset]; // horizontal axis
 // arg3: isFitContent // whether the banner height is set to fit content
 // arg4: isInViewport // whether the banner is visible (in viewport) or hidden (outside viewport)
-// arg5: bannerTransitionDirection // direction of banner slide-in animation 'horizontal' or 'vertical'
+// arg5: bannerTransitionDirection // direction of banner slide-in animation "horizontal" or "vertical"
 //
 // e.g.
-// arg1: ['top', 'bottom', 'height', '30px'];
-// arg2: ['left', 'right', 'width', '2em'];
+// arg1: ["top", "bottom", "height", "30px"];
+// arg2: ["left", "right", "width", "2em"];
 // arg3: True
 // arg4: False
-// arg5: 'vertical'
+// arg5: "vertical"
 
 // Returns:
 // arg1:
@@ -54,12 +54,12 @@ export function processBannerPosition(config: Powerjinja["config"]) {
 	{%- macro _cb2(h_vals=None, _2=None, _3=None, _4=None, v_vals=None, _6=[], _7=0) -%}
 		{{- powerjinja.css.translate("translateY('" ~ v_vals.translation ~ "')") -}}
 
-		{%- if not arg4 and arg5 == 'vertical' -%}
-			{%- set v_offset = '-2 * ' ~ v_vals.size -%}
+		{%- if not arg4 and arg5 == "vertical" -%}
+			{%- set v_offset = "-2 * " ~ v_vals.size -%}
 			{%- set h_offset = h_vals.offset -%}
-		{%- elif not arg4 and arg5 == 'horizontal' -%}
+		{%- elif not arg4 and arg5 == "horizontal" -%}
 			{%- set v_offset = v_vals.offset -%}
-			{%- set h_offset = '-2 * ' ~ h_vals.size -%}
+			{%- set h_offset = "-2 * " ~ h_vals.size -%}
 		{%- else -%}
 			{%- set v_offset = v_vals.offset -%}
 			{%- set h_offset = h_vals.offset -%}
@@ -68,7 +68,7 @@ export function processBannerPosition(config: Powerjinja["config"]) {
 		{%- set v_vals = {"pos": v_vals.pos, "pos_opp": v_vals.pos_opp, "size": v_vals.size, "translation": v_vals.translation, "offset": v_offset} -%}
 		{%- set h_vals = {"pos": h_vals.pos, "pos_opp": h_vals.pos_opp, "size": h_vals.size, "translation": h_vals.translation, "offset": h_offset} -%}
 
-		{%- if arg5 == 'horizontal' -%}
+		{%- if arg5 == "horizontal" -%}
 			{%- set main_axis_vals = h_vals -%}
 			{%- set second_axis_vals = v_vals -%}
 		{%- else -%}

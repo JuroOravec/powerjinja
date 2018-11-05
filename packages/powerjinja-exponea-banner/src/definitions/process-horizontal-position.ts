@@ -10,9 +10,9 @@ import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 // arg3: banner horizontal offset from edges
 //
 // e.g.
-// arg1: 'left';
-// arg2: '300px';
-// arg3: '20px';
+// arg1: "left";
+// arg2: "300px";
+// arg3: "20px";
 
 // Returns object with data on horizontal position:
 // {
@@ -29,11 +29,11 @@ import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 export function processHorizontalPosition(config: Powerjinja["config"]) {
   return `
 {%- macro process_horizontal_position(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
-	{%- set position_map = {'left': 'right', 'right': 'left'} -%}
-	{%- if arg1 == 'center' -%}
-		{%- set pos_horizontal = 'left' -%}
+	{%- set position_map = {"left": "right", "right": "left"} -%}
+	{%- if arg1 == "center" -%}
+		{%- set pos_horizontal = "left" -%}
 		{%- set pos_horizontal_opp =  [position_map][0][pos_horizontal] -%}
-		{%- set offset_horizontal = '50% - ( ' ~  arg2 ~ ' / 2 ) ' -%}
+		{%- set offset_horizontal = "50% - ( " ~  arg2 ~ " / 2 ) " -%}
 	{%- else -%}
 		{%- set pos_horizontal = arg1 -%}
 		{%- set pos_horizontal_opp = [position_map][0][arg1] -%}
