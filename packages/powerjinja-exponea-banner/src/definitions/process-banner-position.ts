@@ -80,7 +80,7 @@ export function processBannerPosition(config: Powerjinja["config"]) {
 	{%- endmacro -%}
 
 	{%- macro _cb1(v_vals=None, _2=None, _3=None, _4=None, _5=None, _6=[], _7=0) -%}
-		{{- powerjinja.core.handle_queue(arg2[0], arg2[1], arg2[2], arg3, v_vals) -}}
+		{{- powerjinja.core.handle_queue(arg2[0], arg2[1], arg2[2], arg3, v_vals, macros=_6, index=_7) -}}
 	{%- endmacro -%}
 
 	{{- powerjinja.exponea_banner.process_vertical_position(arg1[0], arg1[1], arg1[2], arg3, macros=[_cb1, powerjinja.exponea_banner.process_horizontal_position, _cb2 ]) -}}
