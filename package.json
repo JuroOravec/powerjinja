@@ -15,7 +15,7 @@
     "create:all": "npm run create:index && npm run create:initialize && npm run create:definition-loader",
     "fix-typos": "node util/fix-definition-typos/fix-definition-typos-all.js",
     "update-main": "node util/update-main-package-dependencies.js",
-    "build": "npm run create-index-all && npm run update-main && lerna run build",
+    "build": "npm run create:all && npm run update-main && lerna run build",
     "prod": "npm run build && lerna publish",
     "publish": "lerna publish",
     "upgrade": "npx lerna-update-wizard",
