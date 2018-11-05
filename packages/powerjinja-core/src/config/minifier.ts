@@ -28,7 +28,10 @@ export function minifier(str) {
           while (/\s/.test(str[i + 1])) {
             i++;
           }
+        } else if (stringLiteral && insideStatement) {
+          minifiedtext += str[i];
         }
+
         break;
 
       case " ":
