@@ -16,7 +16,7 @@
     "fix-typos": "node util/fix-definition-typos/fix-definition-typos-all.js",
     "update-main": "node util/update-main-package-dependencies.js",
     "build": "npm run create:all && npm run update-main && lerna run build",
-    "prod": "npm run build && lerna publish",
+    "prod": "npm run build && npm run doc && lerna publish",
     "publish": "lerna publish",
     "upgrade": "npx lerna-update-wizard",
     "doc": "node util/create-doc-data.js"
