@@ -13,8 +13,8 @@ module.exports = function createInitialize(package) {
 
     const corePkgName = generateNameVariants(corePackage.split('-'));
 
-    const loader = package === mainPackage ? 'loadDefinitions' : 'loadModules';
-    const loaderPath = package === mainPackage ? 'load-definitions' : 'load-modules';
+    const loader = package === mainPackage ? 'loadModules' : 'loadDefinitions';
+    const loaderPath = package === mainPackage ? 'load-modules' : 'load-definitions';
     const interfacePath = package === corePackage ? '../' : `${corePackage}/lib/`;
     const instantiationFnName = package === corePackage ? 'instantiate' : `initialize${corePkgName.titleCase.replace(/\s/g, '')}`;
     const instantiationParams = package === corePackage ? 'undefined, config' : 'config';
