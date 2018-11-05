@@ -11,7 +11,7 @@ export function transform(config: Powerjinja["config"]) {
 	{{- '-ms-transform: ' ~ arg1 ~ ';' -}}
 	{{- '-o-transform: ' ~ arg1 ~ ';' -}}
 	{{- 'transform: ' ~ arg1 ~ ';' -}}
-	{{- powerjinja.core.handle_queue(result, arg2, arg3, arg4, arg5, macros, index) -}}
+	{{- powerjinja.core.handle_queue(arg1, arg2, arg3, arg4, arg5, macros, index) -}}
 {%- endmacro -%}
 `;
 }

@@ -9,7 +9,7 @@ export function appearance(config: Powerjinja["config"]) {
 	{{- '-webkit-appearance: ' ~ arg1 ~ ';' -}}
 	{{- '-moz-appearance: ' ~ arg1 ~ ';' -}}
 	{{- 'appearance: ' ~ arg1 ~ ';' -}}
-	{{- powerjinja.core.handle_queue(result, arg2, arg3, arg4, arg5, macros, index) -}}
+	{{- powerjinja.core.handle_queue(arg1, arg2, arg3, arg4, arg5, macros, index) -}}
 {%- endmacro -%}
 `;
 }

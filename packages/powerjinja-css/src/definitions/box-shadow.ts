@@ -9,7 +9,7 @@ export function boxShadow(config: Powerjinja["config"]) {
 	{{- '-webkit-box-shadow: ' ~ arg1 ~ ';' -}}
 	{{- '-moz-box-shadow: ' ~ arg1 ~ ';' -}}
 	{{- 'box-shadow: ' ~ arg1 ~ ';' -}}
-	{{- powerjinja.core.handle_queue(result, arg2, arg3, arg4, arg5, macros, index) -}}
+	{{- powerjinja.core.handle_queue(arg1, arg2, arg3, arg4, arg5, macros, index) -}}
 {%- endmacro -%}
 `;
 }

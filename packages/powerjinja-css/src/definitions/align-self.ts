@@ -9,7 +9,7 @@ export function alignSelf(config: Powerjinja["config"]) {
 	{{- '-webkit-align-self: ' ~ arg1 ~ ';' -}}
 	{{- '-ms-flex-item-align: ' ~ arg1 ~ ';' -}}
 	{{- 'align-self: ' ~ arg1 ~ ';' -}}
-	{{- powerjinja.core.handle_queue(result, arg2, arg3, arg4, arg5, macros, index) -}}
+	{{- powerjinja.core.handle_queue(arg1, arg2, arg3, arg4, arg5, macros, index) -}}
 {%- endmacro -%}
 `;
 }

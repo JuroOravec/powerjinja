@@ -9,7 +9,7 @@ export function borderRadius(config: Powerjinja["config"]) {
 	{{- '-webkit-border-radius: ' ~ arg1 ~ ';' -}}
 	{{- '-moz-border-radius: ' ~ arg1 ~ ';' -}}
 	{{- 'border-radius: ' ~ arg1 ~ ';' -}}
-	{{- powerjinja.core.handle_queue(result, arg2, arg3, arg4, arg5, macros, index) -}}
+	{{- powerjinja.core.handle_queue(arg1, arg2, arg3, arg4, arg5, macros, index) -}}
 {%- endmacro -%}
 `;
 }

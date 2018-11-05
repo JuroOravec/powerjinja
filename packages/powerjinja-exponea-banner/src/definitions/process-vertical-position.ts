@@ -31,15 +31,15 @@ import { handleQueue } from "powerjinja-core/lib/definitions/handle-queue";
 export function processVerticalPosition(config: Powerjinja["config"]) {
   return `
 {%- macro process_vertical_position(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
-	{%- set position_map = {'top': 'bottom', 'bottom': 'top'} -%}
-	{%- if arg1 == 'top' or arg1 == 'bottom' -%}
+	{%- set position_map = {"top": "bottom", "bottom": "top"} -%}
+	{%- if arg1 == "top" or arg1 == "bottom" -%}
 		{%- set pos_vertical = arg1 -%}
-		{%- set pos_vertical_opp = position_map[pos_vertical] -%}
+		{%- set pos_vertical_opp = [position_map][0][pos_vertical] -%}
 		{%- set translation_vertical = '0%' -%}
 		{%- set offset_vertical = arg3 -%}
 	{%- elif arg1 == 'center' -%}
 		{%- set pos_vertical = 'top' -%}
-		{%- set pos_vertical_opp = position_map[pos_vertical] -%}
+		{%- set pos_vertical_opp = [position_map][0][pos_vertical] -%}
 		{%- if arg4 == 'true' or arg4 == True -%}
 			{%- set offset_vertical = '50%' %}
 			{%- set translation_vertical = '-50%' -%}
@@ -47,6 +47,11 @@ export function processVerticalPosition(config: Powerjinja["config"]) {
 			{%- set offset_vertical = '50% - ( ' ~  arg2 ~ ' / 2 ) ' -%}
 			{%- set translation_vertical = '0%' -%}
 		{%- endif %}
+	{%- else -%}
+		{%- set pos_vertical = 'top' -%}
+		{%- set pos_vertical_opp = [position_map][0][pos_vertical] -%}
+		{%- set translation_vertical = '0%' -%}
+		{%- set offset_vertical = arg3 -%}
 	{%- endif %}
 	{%- set result = {"pos": pos_vertical, "pos_opp": pos_vertical_opp, "size": arg2, "offset": offset_vertical, "translation": translation_vertical} -%}
 	{{- powerjinja.core.handle_queue(result, arg2, arg3, arg4, arg5, macros, index) -}}

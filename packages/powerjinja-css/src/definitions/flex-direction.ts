@@ -31,7 +31,7 @@ export function flexDirection(config: Powerjinja["config"]) {
 	{{- '-moz-box-direction: ' ~ dir ~ ';' -}}
 	{{- '-ms-flex-direction: ' ~ arg1 ~ ';' -}}
 	{{- 'flex-direction: ' ~ arg1 ~ ';' -}}
-	{{- powerjinja.core.handle_queue(result, arg2, arg3, arg4, arg5, macros, index) -}}
+	{{- powerjinja.core.handle_queue(arg1, arg2, arg3, arg4, arg5, macros, index) -}}
 {%- endmacro -%}
 `;
 }

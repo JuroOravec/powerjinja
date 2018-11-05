@@ -32,11 +32,11 @@ export function processHorizontalPosition(config: Powerjinja["config"]) {
 	{%- set position_map = {'left': 'right', 'right': 'left'} -%}
 	{%- if arg1 == 'center' -%}
 		{%- set pos_horizontal = 'left' -%}
-		{%- set pos_horizontal_opp =  position_map[pos_horizontal] -%}
+		{%- set pos_horizontal_opp =  [position_map][0][pos_horizontal] -%}
 		{%- set offset_horizontal = '50% - ( ' ~  arg2 ~ ' / 2 ) ' -%}
 	{%- else -%}
 		{%- set pos_horizontal = arg1 -%}
-		{%- set pos_horizontal_opp = position_map[arg1] -%}
+		{%- set pos_horizontal_opp = [position_map][0][arg1] -%}
 		{%- set offset_horizontal = arg3 -%}
 	{%- endif -%}
 	{%- set result = {"pos": pos_horizontal, "pos_opp": pos_horizontal_opp, "size": arg2, "offset": offset_horizontal, "translation": "" } -%}

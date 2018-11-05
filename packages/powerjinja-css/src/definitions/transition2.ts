@@ -17,7 +17,7 @@ export function transition2(config: Powerjinja["config"]) {
   return `
 {%- macro transition2(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{%- set prefixes = ['-webkit-', '-o-', '-moz-', ''] -%}
-	{%- set defaults = ["", duration, timing] -%}
+	{%- set defaults = ["", agr2, arg3] -%}
 	{%- for prefix in prefixes -%}
 		{{- prefix ~ 'transition: ' -}}
 		{%- for attribute in arg1 -%}
@@ -35,7 +35,7 @@ export function transition2(config: Powerjinja["config"]) {
 			{%- if not loop.last -%}, {% endif -%}
 		{%- endfor %};{% if not loop.last %}{{'\n'}}{%- endif -%}
 	{%- endfor -%}
-	{{- powerjinja.core.handle_queue(result, arg2, arg3, arg4, arg5, macros, index) -}}
+	{{- powerjinja.core.handle_queue(arg1, arg2, arg3, arg4, arg5, macros, index) -}}
 {%- endmacro -%}
 `;
 }

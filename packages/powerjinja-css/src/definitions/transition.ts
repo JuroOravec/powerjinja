@@ -10,7 +10,7 @@ export function transition(config: Powerjinja["config"]) {
 	{{- '-o-transition: ' ~ arg1 ~ ';' -}}
 	{{- '-moz-transition: ' ~ arg1 ~ ';' -}}
 	{{- 'transition: ' ~ arg1 ~ ';' -}}
-	{{- powerjinja.core.handle_queue(result, arg2, arg3, arg4, arg5, macros, index) -}}
+	{{- powerjinja.core.handle_queue(arg1, arg2, arg3, arg4, arg5, macros, index) -}}
 {%- endmacro -%}
 `;
 }

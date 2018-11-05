@@ -11,7 +11,7 @@ export function flexWrap(config: Powerjinja["config"]) {
 	{{- '-webkit-flex-wrap: ' ~ arg1 ~ ';' -}}
 	{{- '-ms-flex-wrap: ' ~ arg1 ~ ';' -}}
 	{{- 'flex-wrap: ' ~ arg1 ~ ';' -}}
-	{{- powerjinja.core.handle_queue(result, arg2, arg3, arg4, arg5, macros, index) -}}
+	{{- powerjinja.core.handle_queue(arg1, arg2, arg3, arg4, arg5, macros, index) -}}
 {%- endmacro -%}
 `;
 }

@@ -13,7 +13,7 @@ export function flex(config: Powerjinja["config"]) {
 	{{- '-moz-box-flex: ' ~ arg1 ~ ';' -}}
 	{{- '-ms-flex: ' ~ arg1 ~ ' ' ~ arg2 ~ ' ' ~ arg3 ~ ';' -}}
 	{{- 'flex: ' ~ arg1 ~ ' ' ~ arg2 ~ ' ' ~ arg3 ~ ';' -}}
-	{{- powerjinja.core.handle_queue(result, arg2, arg3, arg4, arg5, macros, index) -}}
+	{{- powerjinja.core.handle_queue(arg1, arg2, arg3, arg4, arg5, macros, index) -}}
 {%- endmacro -%}
 `;
 }
