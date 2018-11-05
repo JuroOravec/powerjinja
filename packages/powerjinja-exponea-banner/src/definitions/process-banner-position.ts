@@ -52,7 +52,7 @@ export function processBannerPosition(config: Powerjinja["config"]) {
   return `
 {%- macro process_banner_position(arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, macros=[], index=0) -%}
 	{%- macro _cb2(h_vals=None, _2=None, _3=None, _4=None, v_vals=None, _6=[], _7=0) -%}
-		{{- powerjinja.css.transform("translateY('" ~ v_vals.translation ~ "')") -}}
+		{{- powerjinja.css.transform("translateY(" ~ v_vals.translation ~ ")") -}}
 
 		{%- if not arg4 and arg5 == "vertical" -%}
 			{%- set v_offset = "-2 * " ~ v_vals.size -%}
