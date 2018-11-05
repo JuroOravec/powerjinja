@@ -30,9 +30,9 @@ export function transition2(config: Powerjinja["config"]) {
 					{{- attribute[0] ~ " " ~ attribute[1] ~ " " ~ attribute[2] -}}
 				{%- endif -%}
 			{%- else -%}
-				{{- attribute ~ " " ~ arg2 ~ " " ~ arg3 -}}
+				{{- attribute ~ " " ~ defaults[1] ~ " " ~ defaults[2] -}}
 			{%- endif -%}
-			{%- if not loop.last -%}, {% endif -%}
+			{%- if not loop.last -%}{{", "}}{% endif -%}
 		{%- endfor %};{% if not loop.last %}{{"\n"}}{%- endif -%}
 	{%- endfor -%}
 	{{- powerjinja.core.handle_queue(arg1, arg2, arg3, arg4, arg5, macros, index) -}}
