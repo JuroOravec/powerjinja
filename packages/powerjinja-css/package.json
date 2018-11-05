@@ -1,6 +1,6 @@
 {
   "name": "powerjinja-css",
-  "version": "0.5.6",
+  "version": "0.5.9",
   "description": "Powerjinja module for constructing CSS syntax and adding vendor prefixes",
   "keywords": [
     "powerjinja",
