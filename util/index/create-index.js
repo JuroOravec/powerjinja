@@ -12,7 +12,7 @@ module.exports = function createIndex(package) {
 
     let file = `import { initialize as _initialize } from "./powerjinja/initialize";\n\n`;
     file += `export const initialize = _initialize;\n\n`;
-    file += `export const ${packageName.camelCase} = _initialize();`;
+    file += `export const ${packageName.camelCase} = _initialize();\n`;
 
 
     fs.writeFileSync(path.resolve('packages/' + packageName.kebabCase + '/src/index.ts'), file);

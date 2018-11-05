@@ -23,7 +23,7 @@ module.exports = function createInitialize(package) {
     if (package === corePackage) {
         file += `import { instantiate } from "./instantiate";\n`;
     } else {
-        file += `import { initialize as initialize${corePkgName.titleCase.replace(/\s/g, '')} } from '${corePkgName.kebabCase}';\n`
+        file += `import { initialize as initialize${corePkgName.titleCase.replace(/\s/g, '')} } from "${corePkgName.kebabCase}";\n`
     }
 
     file += `import { ${loader} } from "./${loaderPath}";\n`
@@ -32,7 +32,7 @@ module.exports = function createInitialize(package) {
     file += `  const powerjinja = ${instantiationFnName}(${instantiationParams});\n`
     file += `  ${loader}(powerjinja);\n`;
     file += `  return powerjinja;\n`;
-    file += `}`;
+    file += `}\n`;
 
     fs.writeFileSync(path.resolve('packages/' + package + '/src/powerjinja/initialize.ts'), file);
     console.log('The file has been saved!');
