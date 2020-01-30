@@ -1,0 +1,17 @@
+{
+    "sections": [{
+        "name": "What is PowerJinja?",
+        "content": [{
+            "type": "text",
+            "content": "Powerjinja is an in-template data manipulation library for jinja2 templating language.\n\nWhat does this mean?\nPowerJinja expands the data manipulation capabilities within jijna2 templates without the need to add extensions. PowerJinja is great for rapid template prototyping in cases where the access to the jinja2 setup is not available or if certain functionalities need to be accessed ad-hoc.\n\nWith powerjinja you can utilize many functionalities known from other languages for manipulation of arrays, objects, strings, numbers, etc. In addition, powerjinja modules may provide additional functions like common math functions or vendor prefixing for css attributes.\n\nFor full list of available functions, see the documentation.",
+            "children": []
+        }, {
+            "name": "Installing PowerJinja",
+            "children": [{
+                "name": "NPM",
+                "content": "Powerjinja is an in-template data manipulation library for jinja2 templating language.\n\nWhat does this mean?\nPowerJinja expands the data manipulation capabilities within jijna2 templates without the need to add extensions. PowerJinja is great for rapid template prototyping in cases where the access to the jinja2 setup is not available or if certain functionalities need to be accessed ad-hoc.\n\nWith powerjinja you can utilize many functionalities known from other languages for manipulation of arrays, objects, strings, numbers, etc. In addition, powerjinja modules may provide additional functions like common math functions or vendor prefixing for css attributes.\n\nFor full list of available functions, see the documentation.",
+                "children": []
+            }]
+        }]
+    }]
+}
